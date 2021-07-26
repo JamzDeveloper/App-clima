@@ -1,0 +1,88 @@
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0.5, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.modal.is-open {
+  display: flex;
+}
+.modal-container {
+  position: relative;
+  background-color: #fff;
+  min-width: 320px;
+  max-width: 420px;
+  min-height: 250px;
+  max-width: 600px;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal--container-input {
+  margin-top: 30px;
+}
+
+.modal--container-close {
+  display: flex;
+  justify-content: flex-end;
+}
+/***/
+.input-data {
+  position: relative;
+}
+
+.input-data input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #393083;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #675bc3;
+  outline: none;
+  background: transparent;
+}
+.input-data label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #9924fb;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #9924fb;
+  font-size: 12px;
+}
+.input-btn {
+  display: flex;
+  justify-content: center;
+}
+.btn-form {
+  padding: 5px 4px;
+  background-color: #a099da;
+  color: #45399d;
+  border: 1px solid #a099da;
+  cursor: pointer;
+}
+.btn-form:hover {
+  background-color: #675bc3;
+  color: #fff;
+}
+.btn-form:active {
+  transform: scale(0.9);
+}
