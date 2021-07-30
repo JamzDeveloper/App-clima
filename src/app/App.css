@@ -29,3 +29,13 @@
     color:#2f9c16;
    
 }
+
+@media (max-width: 600px) {
+  .container--app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+

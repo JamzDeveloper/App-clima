@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@svgr/webpack": "^5.5.0",
     "cross-env": "^7.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -17,6 +18,8 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.5.0",
     "style-loader": "^0.23.1",
+    "svg-inline-loader": "^0.8.2",
+    "url-loader": "^4.1.1",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"

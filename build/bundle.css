@@ -1,4 +1,294 @@
-/*!*********************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/app/index.css ***!
-  \*********************************************************************/
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0.5, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.modal.is-open {
+  display: flex;
+}
+.modal-container {
+  position: relative;
+  background-color: #fff;
+  min-width: 320px;
+  max-width: 420px;
+  min-height: 250px;
+  max-width: 600px;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
 
+.modal--container-input {
+  margin-top: 30px;
+}
+
+.modal--container-close {
+  display: flex;
+  justify-content: flex-end;
+}
+/***/
+.input-data {
+  position: relative;
+}
+
+.input-data input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #393083;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #675bc3;
+  outline: none;
+  background: transparent;
+}
+.input-data label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #9924fb;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #9924fb;
+  font-size: 12px;
+}
+.input-btn {
+  display: flex;
+  justify-content: center;
+}
+.btn-form {
+  padding: 5px 4px;
+  background-color: #a099da;
+  color: #45399d;
+  border: 1px solid #a099da;
+  cursor: pointer;
+}
+.btn-form:hover {
+  background-color: #675bc3;
+  color: #fff;
+}
+.btn-form:active {
+  transform: scale(0.9);
+}
+
+/*  
+:root{
+    --circle-border-background:20px solid rgba(6, 22, 168, 0.3);
+    --circle-border:20px solid rgba(5, 21, 170);
+}
+.circle--container{
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    
+}
+.circle--container .circle--progress{
+    margin-top: 71px;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    color: #fff;
+    text-align: center;
+}
+
+.circle--container .pro-1{
+    border: var(--circle-border-background);
+    color: rgba(5, 21, 170);
+}
+.circle--progress h1{
+    font-family: sans-serif;
+    font-size: 13px;
+    margin-bottom:-37px ;
+}
+.circle--progress h1,h2{
+    margin-top: 40px;
+}
+
+.circle--progress .circle{
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    transform: rotate(-135deg);
+}
+
+.circle1{
+    border-top: var(--circle-border);
+    border-left: var(--circle-border);
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    animation:  rotar1 1s linear forwards;
+    animation-delay: 3s;
+}
+
+@keyframes rotar1{
+    100%{
+        transform: rotate(50deg);
+    }
+}*/
+.weatherInfo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.weatherInfo--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: 1s;
+  width: 354px;
+  height: 584px;
+  background: #dbd9f1;
+  border-radius: 10px;
+}
+.weatherInfo--day {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+.weatherInfo--day-img{
+    position: relative;
+    right: -10px;
+}
+.weathInfo--day-data {
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  text-align: left;
+  left: -15px;
+  color: #393083;
+}
+.weathInfo--day-data,h2{
+    font-size: 18px;
+    font-weight: bold;
+}
+.weatherInfo--day-data,p{
+    color: #7A70CB;
+    font-size: 17px;
+}
+/* weather data*/
+
+.weatherInfo--description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color:#393083;
+}
+.weatherInfo--description,h1{
+    color: #393083;
+    font-size: 60px;
+    font-weight: 700;
+}
+.weatherInfo--description,h2{
+    color: #393083;
+
+}
+.weatherInfo--description,p{
+    color: #7A70CB;
+    font-weight: 600;
+}
+
+.weatherInfo--day {
+
+  height: 180px;
+}
+.weatherInfo--description {
+  height: 180px;
+}
+.weatherInfo--temperature {
+  background: green;
+  height: 180px;
+}
+
+@media only screen and (max-width: 600px) {
+  .weatherInfo--container {
+    transition: 1s;
+    width: 254px;
+    height: 384px;
+  }
+  .weatherInfo--day-img img{
+    width: 80%;
+    height: 80%;
+  }
+  .weathInfo--day-data h2,p{
+    font-size: 15px;
+  }
+  .weatherInfo--description h1{
+    font-size: 50px;
+  }
+  .weatherInfo--description h2{
+    font-size: 20px;
+  }
+}
+
+.container--app {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    #4252a8 7.29%,
+    rgba(87, 70, 191, 0.88) 40.1%,
+    rgba(64, 30, 201, 0.66) 66.15%,
+    rgba(143, 0, 255, 0.48) 100%
+  );
+}
+.btn {
+  display: inline-block;
+  background: red;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  background: #2f9c16;
+  border: 4px solid #84c975;
+  padding: 10px;
+  cursor: pointer;
+}
+.btn:hover{
+    transition: 0.4s;
+    background:rgb(255, 255, 255);
+    border: 4px solid white;
+    color:#2f9c16;
+   
+}
+
+@media (max-width: 600px) {
+  .container--app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+
+*{
+    padding:0;
+    margin:0;
+}

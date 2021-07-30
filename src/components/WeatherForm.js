@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "../components/modal/Modal.js";
+import { useHistory } from "react-router-dom";
 const WearherFrom = ({ data, setData }) => {
   /* const initialState = {
     latitude: "",
@@ -8,6 +9,7 @@ const WearherFrom = ({ data, setData }) => {
   //  const [dataLocation, setDataLocation] = useState(initialState);
 
   const [openModal, setOpenModal] = useState(false);
+  const history = useHistory();
   /*
   const handleLocation = () => {
     function getLocation() {
@@ -49,7 +51,7 @@ const WearherFrom = ({ data, setData }) => {
       });
     }
     getLocation();
-    console.log(data);
+    history.push("/clima");
   };
 
   const handleModal = () => {
