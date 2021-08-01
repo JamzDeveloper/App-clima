@@ -21,6 +21,7 @@
   min-height: 250px;
   max-width: 600px;
   overflow-y: auto;
+  border-radius: 10px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -56,7 +57,7 @@
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: #9924fb;
+  color: #A099DA;
   pointer-events: none;
   transition: 0.5s;
 }
@@ -169,9 +170,9 @@
   text-align: center;
   align-items: center;
 }
-.weatherInfo--day-img{
-    position: relative;
-    right: -10px;
+.weatherInfo--day-img {
+  position: relative;
+  right: -10px;
 }
 .weathInfo--day-data {
   font-family: "Open Sans", sans-serif;
@@ -180,68 +181,83 @@
   left: -15px;
   color: #393083;
 }
-.weathInfo--day-data,h2{
-    font-size: 18px;
-    font-weight: bold;
+.weathInfo--day-data,
+h2 {
+  font-size: 18px;
+  font-weight: bold;
 }
-.weatherInfo--day-data,p{
-    color: #7A70CB;
-    font-size: 17px;
+.weatherInfo--day-data,
+p {
+  color: #7a70cb;
+  font-size: 17px;
 }
 /* weather data*/
 
 .weatherInfo--description {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    font-family: "Open Sans", sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    color:#393083;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #393083;
 }
-.weatherInfo--description,h1{
-    color: #393083;
-    font-size: 60px;
-    font-weight: 700;
+.weatherInfo--description,
+h1 {
+  color: #393083;
+  font-size: 60px;
+  font-weight: 700;
 }
-.weatherInfo--description,h2{
-    color: #393083;
-
+.weatherInfo--description,
+h2 {
+  color: #393083;
 }
-.weatherInfo--description,p{
-    color: #7A70CB;
-    font-weight: 600;
+.weatherInfo--description,
+p {
+  color: #7a70cb;
+  font-weight: 600;
 }
 
 .weatherInfo--day {
-
   height: 180px;
 }
 .weatherInfo--description {
   height: 180px;
 }
 .weatherInfo--temperature {
-  background: green;
   height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-
+.temperature--container-humidity {
+  display: flex;
+  justify-content: space-around;
+  color: #393083;
+}
+.temperature--container-windspeed {
+  display: flex;
+  justify-content: space-around;
+  color: #393083;
+}
 @media only screen and (max-width: 600px) {
   .weatherInfo--container {
     transition: 1s;
     width: 254px;
     height: 384px;
   }
-  .weatherInfo--day-img img{
+  .weatherInfo--day-img img {
     width: 80%;
     height: 80%;
   }
-  .weathInfo--day-data h2,p{
+  .weathInfo--day-data h2,
+  p {
     font-size: 15px;
   }
-  .weatherInfo--description h1{
+  .weatherInfo--description h1 {
     font-size: 50px;
   }
-  .weatherInfo--description h2{
+  .weatherInfo--description h2 {
     font-size: 20px;
   }
 }

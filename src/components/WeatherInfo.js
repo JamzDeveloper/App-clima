@@ -13,9 +13,11 @@ const initialTime = {
   year: 0,
 };
 const initialWeather = {
-  temp:0,
-  city:"",
-  country:"",
+  temp: 0,
+  city: "",
+  country: "",
+  humidity: 0,
+  windspeed: 0,
 };
 const WeatherInfo = ({ data }) => {
   const fecha = new Date();
@@ -23,13 +25,13 @@ const WeatherInfo = ({ data }) => {
   const [dataWeather, setDataWeather] = useState(initialWeather);
 
   const day = [
+    "Domingo",
     "Lunes",
     "Martes",
     "Miercoles",
     "Jueves",
     "Viernes",
     "Sabado",
-    "Domingo",
   ];
   const month = [
     "Enero",
@@ -52,7 +54,7 @@ const WeatherInfo = ({ data }) => {
       hour: fecha.getHours(),
       minute: fecha.getMinutes(),
       dayNumber: fecha.getDate(),
-      day: day[fecha.getDay() - 1],
+      day: day[fecha.getDay()],
       month: month[fecha.getMonth()],
       year: fecha.getFullYear(),
     });
@@ -64,7 +66,7 @@ const WeatherInfo = ({ data }) => {
         hour: fecha.getHours(),
         minute: fecha.getMinutes(),
         dayNumber: fecha.getDate(),
-        day: day[fecha.getDay() - 1],
+        day: day[fecha.getDay()],
         month: month[fecha.getMonth()],
         year: fecha.getFullYear(),
       });
@@ -90,16 +92,16 @@ const WeatherInfo = ({ data }) => {
       const res = await fetch(API_URL);
       const resp = await res.json();
       setDataWeather({
-      ...resp,
-      temp: resp.main.temp.toFixed(),
-      city: resp.name,
-      country: resp.sys.country,
+        ...resp,
+        temp: resp.main.temp.toFixed(),
+        city: resp.name,
+        country: resp.sys.country,
+        humidity: resp.main.humidity,
+        windspeed: resp.wind.speed,
       });
-      console.log(dataWeather.temp,typeof dataWeather.temp);
+      console.log(dataWeather.temp, typeof dataWeather.temp);
       console.log(resp);
       console.log(dataWeather.city);
-
-      
     };
     peticion();
   }, [data]);
@@ -123,7 +125,15 @@ const WeatherInfo = ({ data }) => {
           <p>{`${dataWeather.country}`}</p>
         </div>
         <div className="weatherInfo--temperature">
-          <ProgressionCircle></ProgressionCircle>
+          {/* <ProgressionCircle></ProgressionCircle>*/}
+          <div className="temperature--container-humidity">
+            <p className="humidity--title">Humidity</p>
+            <p className="humidity--value">{`${dataWeather.humidity}%`}</p>
+          </div>
+          <div className="temperature--container-windspeed">
+            <p className="windspeed--title">Wind Speed</p>
+            <p className="windspeed--value">{`${dataWeather.windspeed} m/s`}</p>
+          </div>
         </div>
       </div>
     </div>
